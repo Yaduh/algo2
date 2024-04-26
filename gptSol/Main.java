@@ -14,10 +14,6 @@ public class Main {
         System.out.println("Booked Seats:");
         bookingSystem.displayBookedSeats();
 
-        // Deleting a booked seat
-        System.out.println("\nDeleting seat 144...");
-        bookingSystem.delete(144);
-
         System.out.println("\nRemaining Booked Seats:");
         bookingSystem.displayBookedSeats();
 
@@ -25,7 +21,14 @@ public class Main {
         System.out.println("\nNumber of Available Seats: " + bookingSystem.countAvailableSeats());
 
         // Displaying booked seats after a specific booked seat
-        System.out.println("\nBooked Seats After seat 133:");
-        bookingSystem.displayBookedSeatsAfter(133);
+        System.out.println("\nBooked Seats After seat 90:");
+        bookingSystem.displayBookedSeatsAfter(90);
+
+        // Deleting a booked seat
+        System.out.println("\nDeleting seat 144...");
+        bookingSystem.delete(144);
+        System.out.println("Booked Seats:");
+        bookingSystem.displayBookedSeats();
+        System.out.println("\nNumber of Available Seats: " + bookingSystem.countAvailableSeats());
     }
 }
