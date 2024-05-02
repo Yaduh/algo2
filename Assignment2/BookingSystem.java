@@ -9,7 +9,7 @@ class BookingSystem {
     }
     // Method to insert booking
     public void insert(int seatNumber, String ownerName) {
-        root = insertRec(root, seatNumber, ownerName); // assigns node to insert to the returned root node
+        this.root = insertRec(root, seatNumber, ownerName); // assigns node to insert to the returned root node
         System.out.println("Booked seat number: " + seatNumber + "\nFor: " + ownerName + ".\n");
     }
 
@@ -25,7 +25,7 @@ class BookingSystem {
         }     
         else if (seatNumber > root.seatNumber){// if true then recursively call insertRec on the right sub tree of the current node 'root.right'
             root.right = insertRec(root.right, seatNumber, ownerName);
-            }
+        }
         return root; // Appropriate position is found. (either left or right child of parent node)
     }
 
@@ -86,19 +86,23 @@ class BookingSystem {
         inorderTraversal(root);
     }
 
+    // Method to perform an inorder traversal of the binary search tree.
+    // This traversal prints the booked seats in ascending order of seat numbers.
     private void inorderTraversal(TreeNode root) {
         if (root != null) {
-            inorderTraversal(root.left);
-            System.out.println("Seat " + root.seatNumber + ": " + root.ownerName);
-            inorderTraversal(root.right);
+            inorderTraversal(root.left); // Traverse left subtree
+            System.out.println("Seat " + root.seatNumber + ": " + root.ownerName); // Print current node
+            inorderTraversal(root.right); // Traverse right subtree
         }
     }
 
     // Method to display booked seats after a specific booked seat
+    // It prints the booked seats with seat numbers greater than the specified seat number.
     public void displayBookedSeatsAfter(int seatNumber) {
         displayBookedSeatsAfterRec(root, seatNumber);
     }
 
+    // Recursive helper method for displaying booked seats after a specific booked seat number.
     private void displayBookedSeatsAfterRec(TreeNode root, int seatNumber) {
         if (root == null)
             return;
@@ -106,7 +110,7 @@ class BookingSystem {
         displayBookedSeatsAfterRec(root.left, seatNumber);
 
         if (root.seatNumber > seatNumber)
-            System.out.println("Seat " + root.seatNumber + ": " + root.ownerName);
+            System.out.println("Seat " + root.seatNumber + ": " + root.ownerName); // Print current node if seat number is greater than specified seat number
 
         displayBookedSeatsAfterRec(root.right, seatNumber);
     }
