@@ -5,11 +5,11 @@ public class Main {
         BookingSystem bookingSystem = new BookingSystem();
 
         // Booking seats
-        bookingSystem.insert(133, "Alice");
-        bookingSystem.insert(90, "Bob");
-        bookingSystem.insert(120, "Charlie");
-        bookingSystem.insert(144, "David");
-        bookingSystem.insert(150, "Eve");
+        bookingSystem.insert(133, "Ahmed");
+        bookingSystem.insert(90, "Didar");
+        bookingSystem.insert(120, "Hoger");
+        bookingSystem.insert(144, "Zhina");
+        bookingSystem.insert(150, "Nma");
         
         System.out.println("Booked Seats:");
         bookingSystem.displayBookedSeats();
